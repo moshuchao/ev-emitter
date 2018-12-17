@@ -4,26 +4,6 @@
  * MIT License
  */
 
-/* jshint unused: true, undef: true, strict: true */
-
-( function( global, factory ) {
-  // universal module definition
-  /* jshint strict: false */ /* globals define, module, window */
-  if ( typeof define == 'function' && define.amd ) {
-    // AMD - RequireJS
-    define( factory );
-  } else if ( typeof module == 'object' && module.exports ) {
-    // CommonJS - Browserify, Webpack
-    module.exports = factory();
-  } else {
-    // Browser globals
-    global.EvEmitter = factory();
-  }
-
-}( typeof window != 'undefined' ? window : this, function() {
-
-"use strict";
-
 function EvEmitter() {}
 
 var proto = EvEmitter.prototype;
@@ -107,6 +87,4 @@ proto.allOff = function() {
   delete this._onceEvents;
 };
 
-return EvEmitter;
-
-}));
+module.exports =  EvEmitter;
